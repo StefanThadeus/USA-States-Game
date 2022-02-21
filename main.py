@@ -46,11 +46,7 @@ while answered_correctly < 50:
                 guessed_list.append(state)
 
 # save the un-guessed states in a csv file for the player to learn
-not_guessed = []
-
-for state in data.state:
-    if state not in guessed_list:
-        not_guessed.append(state)
+not_guessed = [state for state in data.state if state not in guessed_list]
 
 learn_data_dict = {"State": not_guessed}
 
